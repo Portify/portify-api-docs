@@ -1,0 +1,42 @@
+<h1 id='custom-perk-redemptions-by-user'>Custom Perk Redemptions By User</h1><h2 id='get-get-all-custom-perk-redemptions-for-a-user'>[GET] Get All Custom Perk Redemptions for a User</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://portify-api.herokuapp.com/companies/:company_id/admins/:admin_id/users/:user_id/custom_perk_redemptions"</span>
+  -H <span class="s2">"Authorization"</span>: <span class="s2">"Token token=yourtoken"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"custom_perk_redemptions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"951e28bf-a506-4668-928c-814764c903c7"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"custom_perk_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02628317-abbd-4b4a-a38d-adb20f374e57"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-21 14:57:50.000"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"951e28bf-a506-4668-928c-814764c903c7"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"custom_perk_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02628317-abbd-4b4a-a38d-adb20f374e57"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-28 15:13:12.010"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all custom perk redemptions for a specific user.</p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>company_id</td>
+<td>The ID of your company</td>
+</tr>
+<tr>
+<td>admin_id</td>
+<td>The ID of your admin account</td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>The ID of the user</td>
+</tr>
+</tbody></table>

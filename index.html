@@ -201,7 +201,7 @@
       <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;shell&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -212,9 +212,6 @@
       <img src="images/logo.png" class="logo" alt="Logo" />
         <div class="lang-selector">
               <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
-              <a href="#" data-language-name="python">python</a>
-              <a href="#" data-language-name="javascript">javascript</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -222,31 +219,105 @@
         <ul class="search-results"></ul>
       <div id="toc" class="toc-list-h1">
           <li>
-            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="introduction">Introduction</a>
           </li>
           <li>
-            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="authentication">Authentication</a>
           </li>
           <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
+            <a href="#custom-perks" class="toc-h1 toc-link" data-title="custom-perks">Custom Perks</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Get All Kittens">Get All Kittens</a>
+                    <a href="#get-get-all-custom-perks" class="toc-h2 toc-link" data-title="get-get-all-custom-perks">[GET] Get All Custom Perks</a>
                   </li>
                   <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
+                    <a href="#get-get-a-specific-custom-perk" class="toc-h2 toc-link" data-title="get-get-a-specific-custom-perk">[GET] Get a Specific Custom Perk</a>
                   </li>
                   <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Delete a Specific Kitten">Delete a Specific Kitten</a>
+                    <a href="#post-create-a-custom-perk" class="toc-h2 toc-link" data-title="post-create-a-custom-perk">[POST] Create a Custom Perk</a>
+                  </li>
+                  <li>
+                    <a href="#patch-update-a-specific-custom-perk" class="toc-h2 toc-link" data-title="patch-update-a-specific-custom-perk">[PATCH] Update a Specific Custom Perk</a>
+                  </li>
+                  <li>
+                    <a href="#delete-delete-a-specific-custom-perk" class="toc-h2 toc-link" data-title="delete-delete-a-specific-custom-perk">[DELETE] Delete a Specific Custom Perk</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+            <a href="#custom-perk-redemptions" class="toc-h1 toc-link" data-title="custom-perk-redemptions">Custom Perk Redemptions</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-get-all-redemptions-for-a-custom-perk" class="toc-h2 toc-link" data-title="get-get-all-redemptions-for-a-custom-perk">[GET] Get All Redemptions for a Custom Perk</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#custom-perk-redemptions-by-user" class="toc-h1 toc-link" data-title="custom-perk-redemptions-by-user">Custom Perk Redemptions By User</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-get-all-custom-perk-redemptions-for-a-user" class="toc-h2 toc-link" data-title="get-get-all-custom-perk-redemptions-for-a-user">[GET] Get All Custom Perk Redemptions for a User</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#enrolments" class="toc-h1 toc-link" data-title="enrolments">Enrolments</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-get-all-enrolments" class="toc-h2 toc-link" data-title="get-get-all-enrolments">[GET] Get All Enrolments</a>
+                  </li>
+                  <li>
+                    <a href="#get-get-a-specific-enrolment" class="toc-h2 toc-link" data-title="get-get-a-specific-enrolment">[GET] Get a Specific Enrolment</a>
+                  </li>
+                  <li>
+                    <a href="#post-create-an-enrolment" class="toc-h2 toc-link" data-title="post-create-an-enrolment">[POST] Create an Enrolment</a>
+                  </li>
+                  <li>
+                    <a href="#patch-update-a-specific-enrolment" class="toc-h2 toc-link" data-title="patch-update-a-specific-enrolment">[PATCH] Update a Specific Enrolment</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#reward-tiers" class="toc-h1 toc-link" data-title="reward-tiers">Reward Tiers</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-get-all-reward-tiers" class="toc-h2 toc-link" data-title="get-get-all-reward-tiers">[GET] Get All Reward Tiers</a>
+                  </li>
+                  <li>
+                    <a href="#get-get-a-specific-reward-tier" class="toc-h2 toc-link" data-title="get-get-a-specific-reward-tier">[GET] Get a Specific Reward Tier</a>
+                  </li>
+                  <li>
+                    <a href="#post-create-a-reward-tier" class="toc-h2 toc-link" data-title="post-create-a-reward-tier">[POST] Create a Reward Tier</a>
+                  </li>
+                  <li>
+                    <a href="#patch-update-a-reward-tier" class="toc-h2 toc-link" data-title="patch-update-a-reward-tier">[PATCH] Update a Reward Tier</a>
+                  </li>
+                  <li>
+                    <a href="#delete-delete-a-specific-reward-tier" class="toc-h2 toc-link" data-title="delete-delete-a-specific-reward-tier">[DELETE] Delete a Specific Reward Tier</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#sessions" class="toc-h1 toc-link" data-title="sessions">Sessions</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#post-create-a-session" class="toc-h2 toc-link" data-title="post-create-a-session">[POST] Create a Session</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#users" class="toc-h1 toc-link" data-title="users">Users</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-get-all-users" class="toc-h2 toc-link" data-title="get-get-all-users">[GET] Get All Users</a>
+                  </li>
+                  <li>
+                    <a href="#get-get-a-specific-user" class="toc-h2 toc-link" data-title="get-get-a-specific-user">[GET] Get a Specific USer</a>
+                  </li>
+              </ul>
           </li>
       </div>
         <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
             <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
         </ul>
     </div>
@@ -254,133 +325,51 @@
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
+<p>Welcome to the Portify Client API. This is a private API reserved only for use by Portify&#39;s partner organisations, not end-users of the Portify service.</p>
 
-<p>We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
+<p>Portify provides a web-based dashboard to it&#39;s partner organisations. The same endpoints that power that dashboard are available here as a RESTful API.</p>
 
-<p>This example API documentation page was created with <a href="https://github.com/lord/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
+<p>To be able to use this API, you must have had an Admin account set up for you by the Portify team, and received your email and password.</p>
 <h1 id='authentication'>Authentication</h1>
-<blockquote>
-<p>To authorize, use this code:</p>
-</blockquote>
-<pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<p>The Portify API is quick to get started with.</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<p>1) Receive the email and password to your Admin account.</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
+<p>2) <a href="/#sessions">Create a Session</a>, and record the admin_id, company_id, and token.</p>
 
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-</code></pre>
-<blockquote>
-<p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
-</blockquote>
-
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
-
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
-
-<p><code>Authorization: meowmeowmeow</code></p>
+<p>3) Use the company_id and admin_id as required in the endpoint URLs. Use the token in the authorization header of your request.</p>
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+    Tokens do not expire, unless a new session is requested.
 </aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves all kittens.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
-</tr>
-<tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
-</tr>
-</tbody></table>
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<h1 id='custom-perks'>Custom Perks</h1><h2 id='get-get-all-custom-perks'>[GET] Get All Custom Perks</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://portify-api.herokuapp.com/companies/:company_id/admins/:admin_id/custom_perks"</span>
+  -H <span class="s2">"Authorization"</span>: <span class="s2">"Token token=yourtoken"</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+  </span><span class="s2">"custom_perks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"906188c9-7bb1-4502-b882-fa207aafb1c6"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20% off Cycling Accessories at Halfords!"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"You can never be short of the right accessories, that is why Halfords has a huge range from lights to clothing and bike locks to helmets. There is something to suit all your needs."</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"picture_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.eetapp.com/uploads/stores/2604/halfords.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"threshold"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"reactivation_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1440</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"redemption_format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"code"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"redemption_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"P93F0N8E"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"redemption_image_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"terms_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://blog.addthiscdn.com/wp-content/uploads/2017/06/22185645/test.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"All"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-08 11:36:57.000"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves a specific kitten.</p>
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
+<p>This endpoint retrieves all custom perks.</p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -389,38 +378,41 @@ Remember — a happy kitten is an authenticated kitten!
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
+<td>company_id</td>
+<td>The ID of your company</td>
+</tr>
+<tr>
+<td>admin_id</td>
+<td>The ID of your admin account</td>
 </tr>
 </tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -X DELETE
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<h2 id='get-get-a-specific-custom-perk'>[GET] Get a Specific Custom Perk</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://portify-api.herokuapp.com/companies/:company_id/admins/:admin_id/custom_perks/:id"</span>
+  -H <span class="s2">"Authorization"</span>: <span class="s2">"Token token=yourtoken"</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
+    </span><span class="s2">"custom_perk"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"906188c9-7bb1-4502-b882-fa207aafb1c6"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20% off Cycling Accessories at Halfords!"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"You can never be short of the right accessories, that is why Halfords has a huge range from lights to clothing and bike locks to helmets. There is something to suit all your needs."</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"picture_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.eetapp.com/uploads/stores/2604/halfords.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"threshold"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"reactivation_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1440</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"redemption_format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"code"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"redemption_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"P93F0N8E"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"redemption_image_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"terms_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://blog.addthiscdn.com/wp-content/uploads/2017/06/22185645/test.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"All"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-08 11:36:57.000"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint deletes a specific kitten.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
+<p>This endpoint retrieves a specific custom perk.</p>
+<h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -428,64 +420,770 @@ Remember — a happy kitten is an authenticated kitten!
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to delete</td>
+<td>company_id</td>
+<td>The ID of your company</td>
+</tr>
+<tr>
+<td>admin_id</td>
+<td>The ID of your admin account</td>
+</tr>
+<tr>
+<td>id</td>
+<td>The ID of the perk to show</td>
 </tr>
 </tbody></table>
-<h1 id='errors'>Errors</h1>
-<aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files...just save them to the `includes` folder and add them to the top of your `index.md`'s frontmatter. Files are included in the order listed.</aside>
-
-<p>The Kittn API uses the following error codes:</p>
-
+<h2 id='post-create-a-custom-perk'>[POST] Create a Custom Perk</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://portify-api.herokuapp.com/companies/:company_id/admins/:admin_id/custom_perks"</span>
+  -X POST
+  -H <span class="s2">"Authorization"</span>: <span class="s2">"Token token=yourtoken"</span>
+  -H <span class="s2">"Accept"</span>: <span class="s2">"application/json"</span>
+  -H <span class="s2">"Content-Type"</span>: <span class="s2">"application/json"</span>
+  -d <span class="s1">'{
+    "custom_perk": {
+          "title": "20% off Cycling Accessories at Halfords!",
+          "description": "You can never be short of the right accessories, that is why Halfords has a huge range from lights to clothing and bike locks to helmets. There is something to suit all your needs.",
+          "picture_url": "http://www.eetapp.com/uploads/stores/2604/halfords.jpg",
+          "threshold": 0,
+          "reactivation_time": 1440,
+          "redemption_format": "code",
+          "redemption_code": "P93F0N8E",
+          "redemption_image_url": nil,
+          "terms_url": "http://blog.addthiscdn.com/wp-content/uploads/2017/06/22185645/test.jpg",
+          "region": "All",
+          "active": true,
+          "tags": []
+        }
+    }'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"custom_perk"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"906188c9-7bb1-4502-b882-fa207aafb1c6"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20% off Cycling Accessories at Halfords!"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"You can never be short of the right accessories, that is why Halfords has a huge range from lights to clothing and bike locks to helmets. There is something to suit all your needs."</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"picture_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.eetapp.com/uploads/stores/2604/halfords.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"threshold"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"reactivation_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">43200</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"redemption_format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"code"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"redemption_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"P93F0N8E"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"redemption_image_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"terms_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://blog.addthiscdn.com/wp-content/uploads/2017/06/22185645/test.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"All"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-08 11:36:57.000"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> 
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w"> 
+        </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Perk Created Successfully!"</span><span class="p">,</span><span class="w"> 
+        </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"perk_create_success"</span><span class="w"> 
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint creates a new custom perk.</p>
+<h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
-<th>Error Code</th>
-<th>Meaning</th>
+<th>Parameter</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>400</td>
-<td>Bad Request -- Your request sucks.</td>
+<td>company_id</td>
+<td>The ID of your company</td>
 </tr>
 <tr>
-<td>401</td>
-<td>Unauthorized -- Your API key is wrong.</td>
+<td>admin_id</td>
+<td>The ID of your admin account</td>
+</tr>
+</tbody></table>
+<h2 id='patch-update-a-specific-custom-perk'>[PATCH] Update a Specific Custom Perk</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://portify-api.herokuapp.com/companies/:company_id/admins/:admin_id/custom_perks/:id"</span>
+  -X PATCH
+  -H <span class="s2">"Authorization"</span>: <span class="s2">"Token token=yourtoken"</span>
+  -H <span class="s2">"Accept"</span>: <span class="s2">"application/json"</span>
+  -H <span class="s2">"Content-Type"</span>: <span class="s2">"application/json"</span>
+  -d <span class="s1">'{
+        "custom_perk": {
+            "threshold": 500,
+        "reactivation_time": 43200
+        }
+    }'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"custom_perk"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"906188c9-7bb1-4502-b882-fa207aafb1c6"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20% off Cycling Accessories at Halfords!"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"You can never be short of the right accessories, that is why Halfords has a huge range from lights to clothing and bike locks to helmets. There is something to suit all your needs."</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"picture_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.eetapp.com/uploads/stores/2604/halfords.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"threshold"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"reactivation_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">43200</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"redemption_format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"code"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"redemption_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"P93F0N8E"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"redemption_image_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"terms_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://blog.addthiscdn.com/wp-content/uploads/2017/06/22185645/test.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"All"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-08 11:36:57.000"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> 
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w"> 
+        </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Perk Updated Successfully!"</span><span class="p">,</span><span class="w"> 
+        </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"perk_update_success"</span><span class="w"> 
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint updates a specific custom perk, overwriting attributes specified in the body of the request.</p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>company_id</td>
+<td>The ID of your company</td>
 </tr>
 <tr>
-<td>403</td>
-<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
+<td>admin_id</td>
+<td>The ID of your admin account</td>
 </tr>
 <tr>
-<td>404</td>
-<td>Not Found -- The specified kitten could not be found.</td>
+<td>id</td>
+<td>The ID of the custom perk</td>
+</tr>
+</tbody></table>
+<h2 id='delete-delete-a-specific-custom-perk'>[DELETE] Delete a Specific Custom Perk</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://portify-api.herokuapp.com/companies/:company_id/admins/:admin_id/custom_perks/:id"</span>
+  -X DELETE
+  -H <span class="s2">"Authorization"</span>: <span class="s2">"Token token=yourtoken"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"906188c9-7bb1-4502-b882-fa207aafb1c6"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> 
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w"> 
+        </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Perk Deleted Successfully!"</span><span class="p">,</span><span class="w"> 
+        </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"perk_delete_success"</span><span class="w"> 
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves a deletes a custom perk.</p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>company_id</td>
+<td>The ID of your company</td>
 </tr>
 <tr>
-<td>405</td>
-<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
+<td>admin_id</td>
+<td>The ID of your admin account</td>
 </tr>
 <tr>
-<td>406</td>
-<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
+<td>id</td>
+<td>The ID of the perk to delete</td>
+</tr>
+</tbody></table>
+<h1 id='custom-perk-redemptions'>Custom Perk Redemptions</h1><h2 id='get-get-all-redemptions-for-a-custom-perk'>[GET] Get All Redemptions for a Custom Perk</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://portify-api.herokuapp.com/companies/:company_id/admins/:admin_id/custom_perks/:custom_perk_id/custom_perk_redemptions"</span>
+  -H <span class="s2">"Authorization"</span>: <span class="s2">"Token token=yourtoken"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"custom_perk_redemptions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"custom_perk_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"906188c9-7bb1-4502-b882-fa207aafb1c6"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02628317-abbd-4b4a-a38d-adb20f374e57"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-21 14:57:50.000"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"custom_perk_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ba445cb5-6887-40c9-8eb2-6f6344558391"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"951e28bf-a506-4668-928c-814764c903c7"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-04 15:57:22.000"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all redemptions for a specific custom perk.</p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>company_id</td>
+<td>The ID of your company</td>
 </tr>
 <tr>
-<td>410</td>
-<td>Gone -- The kitten requested has been removed from our servers.</td>
+<td>admin_id</td>
+<td>The ID of your admin account</td>
 </tr>
 <tr>
-<td>418</td>
-<td>I&#39;m a teapot.</td>
+<td>custom_perk_id</td>
+<td>The ID of the custom perk</td>
+</tr>
+</tbody></table>
+<h1 id='custom-perk-redemptions-by-user'>Custom Perk Redemptions By User</h1><h2 id='get-get-all-custom-perk-redemptions-for-a-user'>[GET] Get All Custom Perk Redemptions for a User</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://portify-api.herokuapp.com/companies/:company_id/admins/:admin_id/users/:user_id/custom_perk_redemptions"</span>
+  -H <span class="s2">"Authorization"</span>: <span class="s2">"Token token=yourtoken"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"custom_perk_redemptions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"951e28bf-a506-4668-928c-814764c903c7"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"custom_perk_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02628317-abbd-4b4a-a38d-adb20f374e57"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-21 14:57:50.000"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"951e28bf-a506-4668-928c-814764c903c7"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"custom_perk_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02628317-abbd-4b4a-a38d-adb20f374e57"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-28 15:13:12.010"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all custom perk redemptions for a specific user.</p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>company_id</td>
+<td>The ID of your company</td>
 </tr>
 <tr>
-<td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
+<td>admin_id</td>
+<td>The ID of your admin account</td>
 </tr>
 <tr>
-<td>500</td>
-<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+<td>user_id</td>
+<td>The ID of the user</td>
+</tr>
+</tbody></table>
+<h1 id='enrolments'>Enrolments</h1><h2 id='get-get-all-enrolments'>[GET] Get All Enrolments</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://portify-api.herokuapp.com/companies/:company_id/admins/:admin_id/enrolments"</span>
+  -H <span class="s2">"Authorization"</span>: <span class="s2">"Token token=yourtoken"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"enrolments"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8190921a-d422-4d4d-ad95-84c5babfb40f"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"company_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"39c01faf-94f9-44e5-98d9-d498b90b369a"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"fixed_score"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"invited"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"invite_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example@gmail.com"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"invite_phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"07500802406"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"activation_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WH1X7"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"invite_email_last_sent"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-02-02 13:23:18.000"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all enrolments.</p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>company_id</td>
+<td>The ID of your company</td>
 </tr>
 <tr>
-<td>503</td>
-<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+<td>admin_id</td>
+<td>The ID of your admin account</td>
+</tr>
+</tbody></table>
+<h2 id='get-get-a-specific-enrolment'>[GET] Get a Specific Enrolment</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://portify-api.herokuapp.com/companies/:company_id/admins/:admin_id/enrolments/:id"</span>
+  -H <span class="s2">"Authorization"</span>: <span class="s2">"Token token=yourtoken"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"enrolment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8190921a-d422-4d4d-ad95-84c5babfb40f"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"company_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"39c01faf-94f9-44e5-98d9-d498b90b369a"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"fixed_score"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"invited"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"invite_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example@gmail.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"invite_phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"07500802406"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"activation_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WH1X7"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"invite_email_last_sent"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-02-02 13:23:18.000"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves a specific enrolment.</p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>company_id</td>
+<td>The ID of your company</td>
+</tr>
+<tr>
+<td>admin_id</td>
+<td>The ID of your admin account</td>
+</tr>
+<tr>
+<td>id</td>
+<td>The ID of the perk to show</td>
+</tr>
+</tbody></table>
+<h2 id='post-create-an-enrolment'>[POST] Create an Enrolment</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://portify-api.herokuapp.com/companies/:company_id/admins/:admin_id/enrolments"</span>
+  -X POST
+  -H <span class="s2">"Authorization"</span>: <span class="s2">"Token token=yourtoken"</span>
+  -H <span class="s2">"Accept"</span>: <span class="s2">"application/json"</span>
+  -H <span class="s2">"Content-Type"</span>: <span class="s2">"application/json"</span>
+  -d <span class="s1">'{
+    "enrolment": {
+            fixed_score: false,
+            score: nil,
+            invited: true,
+            invite_email: "example@gmail.com",
+            invite_phone: "07500802406"
+        }
+    }'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"enrolment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8190921a-d422-4d4d-ad95-84c5babfb40f"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"company_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"39c01faf-94f9-44e5-98d9-d498b90b369a"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"fixed_score"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"invited"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"invite_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example@gmail.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"invite_phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"07500802406"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"activation_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WH1X7"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"invite_email_last_sent"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-02-02 13:23:18.000"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> 
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w"> 
+        </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Enrolment Created Successfully!"</span><span class="p">,</span><span class="w"> 
+        </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"enrolment_create_success"</span><span class="w"> 
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint creates a new enrolment.</p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>company_id</td>
+<td>The ID of your company</td>
+</tr>
+<tr>
+<td>admin_id</td>
+<td>The ID of your admin account</td>
+</tr>
+</tbody></table>
+<h2 id='patch-update-a-specific-enrolment'>[PATCH] Update a Specific Enrolment</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://portify-api.herokuapp.com/companies/:company_id/admins/:admin_id/enrolments/:id"</span>
+  -X PATCH
+  -H <span class="s2">"Authorization"</span>: <span class="s2">"Token token=yourtoken"</span>
+  -H <span class="s2">"Accept"</span>: <span class="s2">"application/json"</span>
+  -H <span class="s2">"Content-Type"</span>: <span class="s2">"application/json"</span>
+  -d <span class="s1">'{
+        "enrolment": {
+            "active": false
+        }
+    }'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"enrolment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8190921a-d422-4d4d-ad95-84c5babfb40f"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"company_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"39c01faf-94f9-44e5-98d9-d498b90b369a"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"fixed_score"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"invited"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"invite_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example@gmail.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"invite_phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"07500802406"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"activation_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WH1X7"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"invite_email_last_sent"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-02-02 13:23:18.000"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> 
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w"> 
+        </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Enrolment Updated Successfully!"</span><span class="p">,</span><span class="w"> 
+        </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"enrolment_update_success"</span><span class="w"> 
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint updates a specific enrolment, overwriting attributes specified in the body of the request.</p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>company_id</td>
+<td>The ID of your company</td>
+</tr>
+<tr>
+<td>admin_id</td>
+<td>The ID of your admin account</td>
+</tr>
+<tr>
+<td>id</td>
+<td>The ID of the enrolment</td>
+</tr>
+</tbody></table>
+<h1 id='reward-tiers'>Reward Tiers</h1><h2 id='get-get-all-reward-tiers'>[GET] Get All Reward Tiers</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://portify-api.herokuapp.com/companies/:company_id/admins/:admin_id/reward_tiers"</span>
+  -H <span class="s2">"Authorization"</span>: <span class="s2">"Token token=yourtoken"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"reward_tiers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"28559585-8f21-410f-982e-419927db2276"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sushi"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"threshold"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"flair_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://emojipedia-us.s3.amazonaws.com/thumbs/240/apple/118/sushi_1f363.png"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e60f875c-821e-4093-a376-70471e355766"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Watermelon"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"threshold"</span><span class="p">:</span><span class="w"> </span><span class="mi">250</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"flair_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://emojipedia-us.s3.amazonaws.com/thumbs/240/apple/118/watermelon_1f363.png"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all reward tiers.</p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>company_id</td>
+<td>The ID of your company</td>
+</tr>
+<tr>
+<td>admin_id</td>
+<td>The ID of your admin account</td>
+</tr>
+</tbody></table>
+<h2 id='get-get-a-specific-reward-tier'>[GET] Get a Specific Reward Tier</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://portify-api.herokuapp.com/companies/:company_id/admins/:admin_id/reward_tiers/:id"</span>
+  -H <span class="s2">"Authorization"</span>: <span class="s2">"Token token=yourtoken"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"reward_tier"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"28559585-8f21-410f-982e-419927db2276"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sushi"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"threshold"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"flair_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://emojipedia-us.s3.amazonaws.com/thumbs/240/apple/118/sushi_1f363.png"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves a specific reward tier.</p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>company_id</td>
+<td>The ID of your company</td>
+</tr>
+<tr>
+<td>admin_id</td>
+<td>The ID of your admin account</td>
+</tr>
+<tr>
+<td>id</td>
+<td>The ID of the reward tier to show</td>
+</tr>
+</tbody></table>
+<h2 id='post-create-a-reward-tier'>[POST] Create a Reward Tier</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://portify-api.herokuapp.com/companies/:company_id/admins/:admin_id/reward_tiers"</span>
+  -X POST
+  -H <span class="s2">"Authorization"</span>: <span class="s2">"Token token=yourtoken"</span>
+  -H <span class="s2">"Accept"</span>: <span class="s2">"application/json"</span>
+  -H <span class="s2">"Content-Type"</span>: <span class="s2">"application/json"</span>
+  -d <span class="s1">'{
+    "reward_tier": {
+            "name": "Sushi",
+            "threshold": 500,
+            "flair_url": "https://emojipedia-us.s3.amazonaws.com/thumbs/240/apple/118/sushi_1f363.png"
+        }
+    }'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"reward_tier"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"28559585-8f21-410f-982e-419927db2276"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sushi"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"threshold"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"flair_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://emojipedia-us.s3.amazonaws.com/thumbs/240/apple/118/sushi_1f363.png"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> 
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w"> 
+        </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Reward Tier Created Successfully!"</span><span class="p">,</span><span class="w"> 
+        </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reward_tier_create_success"</span><span class="w"> 
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint creates a new reward tier.</p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>company_id</td>
+<td>The ID of your company</td>
+</tr>
+<tr>
+<td>admin_id</td>
+<td>The ID of your admin account</td>
+</tr>
+</tbody></table>
+<h2 id='patch-update-a-reward-tier'>[PATCH] Update a Reward Tier</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://portify-api.herokuapp.com/companies/:company_id/admins/:admin_id/reward_tiers/:id"</span>
+  -X PATCH
+  -H <span class="s2">"Authorization"</span>: <span class="s2">"Token token=yourtoken"</span>
+  -H <span class="s2">"Accept"</span>: <span class="s2">"application/json"</span>
+  -H <span class="s2">"Content-Type"</span>: <span class="s2">"application/json"</span>
+  -d <span class="s1">'{
+        "reward_tier": {
+            "name": "Sushi,
+        "threshold": 500
+        }
+    }'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"reward_tier"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"28559585-8f21-410f-982e-419927db2276"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sushi"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"threshold"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"flair_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://emojipedia-us.s3.amazonaws.com/thumbs/240/apple/118/sushi_1f363.png"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> 
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w"> 
+        </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Reward Tier Updated Successfully!"</span><span class="p">,</span><span class="w"> 
+        </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reward_tier_update_success"</span><span class="w"> 
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint updates a specific reward tier, overwriting attributes specified in the body of the request.</p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>company_id</td>
+<td>The ID of your company</td>
+</tr>
+<tr>
+<td>admin_id</td>
+<td>The ID of your admin account</td>
+</tr>
+<tr>
+<td>id</td>
+<td>The ID of the reward tier</td>
+</tr>
+</tbody></table>
+<h2 id='delete-delete-a-specific-reward-tier'>[DELETE] Delete a Specific Reward Tier</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://portify-api.herokuapp.com/companies/:company_id/admins/:admin_id/reward_tiers/:id"</span>
+  -X DELETE
+  -H <span class="s2">"Authorization"</span>: <span class="s2">"Token token=yourtoken"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"28559585-8f21-410f-982e-419927db2276"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> 
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w"> 
+        </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Reward Tier Deleted Successfully!"</span><span class="p">,</span><span class="w"> 
+        </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reward_tier_delete_success"</span><span class="w"> 
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves a deletes a reward tier.</p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>company_id</td>
+<td>The ID of your company</td>
+</tr>
+<tr>
+<td>admin_id</td>
+<td>The ID of your admin account</td>
+</tr>
+<tr>
+<td>id</td>
+<td>The ID of the reward tier to delete</td>
+</tr>
+</tbody></table>
+<h1 id='sessions'>Sessions</h1><h2 id='post-create-a-session'>[POST] Create a Session</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://portify-api.herokuapp.com/admins/sessions"</span>
+  -X POST
+  -H <span class="s2">"Accept"</span>: <span class="s2">"application/json"</span>
+  -H <span class="s2">"Content-Type"</span>: <span class="s2">"application/json"</span>
+  -d <span class="s1">'{
+        "session": {
+          "email": "example@gmail.com",
+          "password": "macncheese"
+        }
+    }'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"admin"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"45904836-aace-44c2-b29a-e0a30eab7a4e"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"company_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"46e62bbe-f23d-4d4c-a362-cba36ddb506a"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chris Butcher"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"chris@portify.co"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"miFW6zkY3V4BiVCUXofJhFfw"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint creates a new session. admin[id], admin[company_id], and token should be recorded to use in all future API calls. Token is regenerated every time this endpoint is successfully called. Tokens do not otherwise expire.</p>
+<h1 id='users'>Users</h1><h2 id='get-get-all-users'>[GET] Get All Users</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://portify-api.herokuapp.com/companies/:company_id/admins/:admin_id/users"</span>
+  -H <span class="s2">"Authorization"</span>: <span class="s2">"Token token=yourtoken"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"users"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02628317-abbd-4b4a-a38d-adb20f374e57"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chris Butcher"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"chris@portify.co"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"07500802406"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-21 14:57:50.000"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all enrolments.</p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>company_id</td>
+<td>The ID of your company</td>
+</tr>
+<tr>
+<td>admin_id</td>
+<td>The ID of your admin account</td>
+</tr>
+</tbody></table>
+<h2 id='get-get-a-specific-user'>[GET] Get a Specific USer</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://portify-api.herokuapp.com/companies/:company_id/admins/:admin_id/users/:id"</span>
+  -H <span class="s2">"Authorization"</span>: <span class="s2">"Token token=yourtoken"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02628317-abbd-4b4a-a38d-adb20f374e57"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chris Butcher"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"chris@portify.co"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"07500802406"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-21 14:57:50.000"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves a specific enrolment.</p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>company_id</td>
+<td>The ID of your company</td>
+</tr>
+<tr>
+<td>admin_id</td>
+<td>The ID of your admin account</td>
+</tr>
+<tr>
+<td>id</td>
+<td>The ID of the user to show</td>
 </tr>
 </tbody></table>
 
@@ -493,9 +1191,6 @@ Remember — a happy kitten is an authenticated kitten!
       <div class="dark-box">
           <div class="lang-selector">
                 <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
-                <a href="#" data-language-name="python">python</a>
-                <a href="#" data-language-name="javascript">javascript</a>
           </div>
       </div>
     </div>
