@@ -9,13 +9,24 @@
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"951e28bf-a506-4668-928c-814764c903c7"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"custom_perk_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02628317-abbd-4b4a-a38d-adb20f374e57"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-21 14:57:50.000"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"951e28bf-a506-4668-928c-814764c903c7"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"custom_perk_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02628317-abbd-4b4a-a38d-adb20f374e57"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-28 15:13:12.010"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-21 14:57:50.000"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"custom_perk"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02628317-abbd-4b4a-a38d-adb20f374e57"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20% off Cycling Accessories at Halfords!"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"You can never be short of the right accessories, that is why Halfords has a huge range from lights to clothing and bike locks to helmets. There is something to suit all your needs."</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"picture_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.eetapp.com/uploads/stores/2604/halfords.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"threshold"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"reactivation_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1440</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"redemption_format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"code"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"redemption_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"P93F0N8E"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"redemption_image_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"terms_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://blog.addthiscdn.com/wp-content/uploads/2017/06/22185645/test.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"All"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-08 11:36:57.000"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
