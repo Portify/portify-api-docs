@@ -16,7 +16,6 @@ includes:
   - custom_perks/update
   - custom_perks/delete
   - custom_perk_redemptions/index
-  - custom_perk_redemptions_by_user/index
   - enrolments/index
   - enrolments/show
   - enrolments/create
