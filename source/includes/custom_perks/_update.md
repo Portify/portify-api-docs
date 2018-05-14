@@ -8,8 +8,8 @@ curl "http://portify-api.herokuapp.com/companies/:company_id/admins/:admin_id/cu
   -H "Content-Type": "application/json"
   -d '{
 		"custom_perk": {
-		 	"threshold": 500,
-	  	"reactivation_time": 43200
+		  "threshold": 500,
+		  "reactivation_time": 43200
 		}
 	}'
 ```
