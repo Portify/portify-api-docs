@@ -20,6 +20,9 @@ includes:
   - enrolments/show
   - enrolments/create
   - enrolments/update
+  - freebies/index
+  - freebies/create
+  - freebies/delete
   - reward_tiers/index
   - reward_tiers/show
   - reward_tiers/create

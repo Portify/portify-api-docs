@@ -37,7 +37,7 @@ curl "http://portify-api.herokuapp.com/companies/:company_id/admins/:admin_id/cu
 }
 ```
 
-This endpoint retrieves all redemptions for a specific custom perk.
+This endpoint retrieves all custom perk redemptions. You can filter the results to only include those related to a specific user or custom perk.
 
 ### URL Parameters
 

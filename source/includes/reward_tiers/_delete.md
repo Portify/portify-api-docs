@@ -19,7 +19,7 @@ curl "http://portify-api.herokuapp.com/companies/:company_id/admins/:admin_id/re
 }
 ```
 
-This endpoint retrieves a deletes a reward tier.
+This endpoint deletes a reward tier.
 
 ### URL Parameters
 
