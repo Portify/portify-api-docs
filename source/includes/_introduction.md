@@ -1,7 +1,11 @@
 # Introduction
 
-Welcome to the Portify Client API. This is a private API reserved only for use by Portify's partner organisations, not end-users of the Portify service.
+Welcome to the Portify Partner API. This is a private API reserved only for use by Portify's partner organisations.
 
-Portify provides a web-based dashboard to it's partner organisations. The same endpoints that power that dashboard are available here as a RESTful API.
+To be able to use this API, you must have been given the following variables, unique to your organisation:
 
-To be able to use this API, you must have had an Admin account set up for you by the Portify team, and received your email and password.
+APP_ID (unique identifier for your app)
+
+SECRET (unique password for your app, passed in the header of all your requests)
+
+ENV_URL (url where the Portify Partner API is hosted)
