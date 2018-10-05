@@ -10,7 +10,7 @@ toc_footers:
 includes:
   - introduction
   - authentication
-  - oauth_tokens/create
+  - partner_integrations/create
 
 search: true
 ---
