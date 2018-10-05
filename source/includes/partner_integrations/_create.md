@@ -9,7 +9,8 @@ curl "ENV_URL/partners/integrations"
   -H "Accept": "application/json"
   -H "Content-Type": "application/json"
   -d '{
-		"token": OAUTH_TOKEN
+    "app_id": APP_ID,
+		"token": "w3HD9bd8PpuQpXgMyjAVS5P2bu3n-FliGkCDP65dgB0"
 	}'
 ```
 > The above command returns JSON structured like this:
@@ -28,4 +29,5 @@ This endpoint creates a new Partner Integration - between a Portify User and a P
 
 Parameter | Description
 --------- | -----------
+app_id | Your application's unique identifier
 token | The Oauth Token returned from the Portify sign-in page
