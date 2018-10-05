@@ -225,10 +225,10 @@
             <a href="#authentication" class="toc-h1 toc-link" data-title="authentication">Authentication</a>
           </li>
           <li>
-            <a href="#oauth-tokens" class="toc-h1 toc-link" data-title="oauth-tokens">Oauth Tokens</a>
+            <a href="#partner-integrations" class="toc-h1 toc-link" data-title="partner-integrations">Partner Integrations</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#post-create-an-oauth-token" class="toc-h2 toc-link" data-title="post-create-an-oauth-token">[POST] Create an Oauth Token</a>
+                    <a href="#post-create-a-partner-integration" class="toc-h2 toc-link" data-title="post-create-a-partner-integration">[POST] Create a Partner Integration</a>
                   </li>
               </ul>
           </li>
@@ -253,34 +253,32 @@
 <h1 id='authentication'>Authentication</h1>
 <p>Portify uses an Oauth2-style flow to authorize the sharing of data between user and Partner. The flow works as follows:</p>
 
-<p>1) User taps button in Portify app that opens the Partner&#39;s &#39;redirect_url&#39;. The user_id is passed as a query parameter.</p>
+<p>1) User taps button in Portify app that opens the Partner&#39;s &#39;landing_page_url&#39;.</p>
 
-<p>2) The Partner captures the user_id and generates a token using the Oauth_Tokens#create endpoint. The partner redirects the user to https://www.portify.co/partner_applications/:APP_ID?token=1234.</p>
+<p>2) User taps a link on the Partner&#39;s landing page that takes them to https://www.portify.co/partner_applications/:APP_ID. An optional &#39;redirect_url&#39; query string parameter can be passed, or the default one will be used.</p>
 
-<p>3) The user has up to 10 minutes to sign-in on this page before the token expires.</p>
+<p>3) The user signs in. On successful sign-in, a redirect is returned that sends the user to the Partner&#39;s desired redirect_url, with a temporary oauth_token as a query string parameter.</p>
 
-<p>4) If sign-in is successful, user is redirected to the Partner&#39;s &#39;callback_url&#39; with a partner_integration token passed as a query string parameter. This token can be used by the Partner to authenticate requests against the user going forward. It does not expire but can be revoked.</p>
-<h1 id='oauth-tokens'>Oauth Tokens</h1><h2 id='post-create-an-oauth-token'>[POST] Create an Oauth Token</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"ENV_URL/partners/oauth_tokens"</span>
+<p>4) The Partner has up to 10 minutes to use the partner_integrations#create endpoint, that will convert the oauth_token to a non-expiring Partner Integration access_token. This token is used in all future requests to access information belonging to the user. This token does not expire, but can be revoked. </p>
+<h1 id='partner-integrations'>Partner Integrations</h1><h2 id='post-create-a-partner-integration'>[POST] Create a Partner Integration</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"ENV_URL/partners/integrations"</span>
   -X POST
   -H <span class="s2">"Authorization"</span>: <span class="s2">"Token token=SECRET"</span>
   -H <span class="s2">"Accept"</span>: <span class="s2">"application/json"</span>
   -H <span class="s2">"Content-Type"</span>: <span class="s2">"application/json"</span>
   -d <span class="s1">'{
-        "app_id": "APP_ID",
-        "user_id": "906188c9-7bb1-4502-b882-fa207aafb1c6"
+        "token": OAUTH_TOKEN
     }'</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"oauth_token"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"token"</span><span class="p">:</span><span class="s2">"IHOnuYHap_EDgoS3hBrxcyNoGzH7a5jTyhf4onUw1IU"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"expires_at"</span><span class="p">:</span><span class="s2">"2018-10-04T15:46:57.833Z"</span><span class="w">
+  </span><span class="s2">"partner_integration"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"access_token"</span><span class="p">:</span><span class="s2">"IHOnuYHap_EDgoS3hBrxcyNoGzH7a5jTyhf4onUw1IU"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint creates a new Oauth Token, that will be valid for 10 minutes.</p>
+<p>This endpoint creates a new Partner Integration - between a Portify User and a Partner Application - and exposes a long-lasting access_token for requests against the user going forward.</p>
 <h3 id='parameters'>Parameters</h3>
 <table><thead>
 <tr>
@@ -289,12 +287,8 @@
 </tr>
 </thead><tbody>
 <tr>
-<td>app_id</td>
-<td>Your app ID</td>
-</tr>
-<tr>
-<td>user_id</td>
-<td>The ID of the Portify user who wishes to share their data</td>
+<td>token</td>
+<td>The Oauth Token returned from the Portify sign-in page</td>
 </tr>
 </tbody></table>
 
