@@ -225,6 +225,17 @@
             <a href="#authentication" class="toc-h1 toc-link" data-title="authentication">Authentication</a>
           </li>
           <li>
+            <a href="#partner-applications" class="toc-h1 toc-link" data-title="partner-applications">Partner Applications</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-show-a-partner-application" class="toc-h2 toc-link" data-title="get-show-a-partner-application">[GET] Show a Partner Application</a>
+                  </li>
+                  <li>
+                    <a href="#patch-update-a-partner-application" class="toc-h2 toc-link" data-title="patch-update-a-partner-application">[PATCH] Update a Partner Application</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#partner-integrations" class="toc-h1 toc-link" data-title="partner-integrations">Partner Integrations</a>
               <ul class="toc-list-h2">
                   <li>
@@ -281,9 +292,98 @@
 
 <p>2) User taps a link on the Partner&#39;s landing page that takes them to https://www.portify.co/partner_applications/:APP_ID. An optional &#39;redirect_url&#39; query string parameter can be passed, or the default one will be used.</p>
 
-<p>3) The user signs in. On successful sign-in, a redirect is returned that sends the user to the Partner&#39;s desired redirect_url, with a temporary oauth_token as a query string parameter.</p>
+<p>3) The user signs in. On successful sign-in, a redirect is returned that sends the user to the Partner&#39;s desired redirect_url, with a temporary token as a query string parameter.</p>
 
-<p>4) The Partner has up to 10 minutes to use the partner_integrations#create endpoint, that will convert the oauth_token to a non-expiring Partner Integration access_token. This token is used in all future requests to access information belonging to the user. This token does not expire, but can be revoked. </p>
+<p>4) The Partner has up to 10 minutes to use the partner_integrations#create endpoint, that will convert the token to a non-expiring Partner Integration access_token. This access_token is used in all future requests to access information belonging to the user. This access_token does not expire, but can be revoked. </p>
+<h1 id='partner-applications'>Partner Applications</h1><h2 id='get-show-a-partner-application'>[GET] Show a Partner Application</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"ENV_URL/partners/applications/:APP_ID"</span>
+  -X GET
+  -H <span class="s2">"Accept"</span>: <span class="s2">"application/json"</span>
+  -H <span class="s2">"Content-Type"</span>: <span class="s2">"application/json"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"partner_application"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Google"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"app_id"</span><span class="p">:</span><span class="s2">"D6wQE1hgo4dGx6FPkfRUzwu6"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"landing_page_url"</span><span class="p">:</span><span class="s2">"https://www.google.com"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"redirect_url"</span><span class="p">:</span><span class="s2">"https://www.google.com/callback_url"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"logo_url"</span><span class="p">:</span><span class="s2">"http://assets.media-marketing.com/wp-content/uploads/2017/11/zasto-je-google-ov-logo-nesavrseno-savrsen.jpg"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"active"</span><span class="p">:</span><span class="kc">true</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint returns a new Partner Application. SECRET token is not required to use this endpoint. </p>
+<h3 id='parameters'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>app_id</td>
+<td>Your application&#39;s unique identifier [required]</td>
+</tr>
+</tbody></table>
+<h2 id='patch-update-a-partner-application'>[PATCH] Update a Partner Application</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"ENV_URL/partners/integrations"</span>
+  -X PATCH
+  -H <span class="s2">"Authorization"</span>: <span class="s2">"Token token=SECRET"</span>
+  -H <span class="s2">"Accept"</span>: <span class="s2">"application/json"</span>
+  -H <span class="s2">"Content-Type"</span>: <span class="s2">"application/json"</span>
+  -d <span class="s1">'{
+    "app_id": APP_ID,
+    "partner_application": {
+      "landing_page":"https://www.facebook.com",
+      "logo_url":"https://image.shutterstock.com/image-photo/valencia-spain-march-05-2017-260nw-593204357.jpg"
+    }
+  }'</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"partner_application"</span><span class="p">:</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Google"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"app_id"</span><span class="p">:</span><span class="s2">"D6wQE1hgo4dGx6FPkfRUzwu6"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"landing_page_url"</span><span class="p">:</span><span class="s2">"https://www.facebook.com"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"redirect_url"</span><span class="p">:</span><span class="s2">"https://www.google.com/callback_url"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"logo_url"</span><span class="p">:</span><span class="s2">"https://image.shutterstock.com/image-photo/valencia-spain-march-05-2017-260nw-593204357.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"active"</span><span class="p">:</span><span class="kc">true</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint updates a Partner Application. Not all fields are updateable, refer to the table below to learn which ones are. </p>
+<h3 id='parameters'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>app_id</td>
+<td>Your application&#39;s unique identifier [required]</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Your application&#39;s name (visible on authorization page)</td>
+</tr>
+<tr>
+<td>landing_page_url</td>
+<td>Where you want Portify users to land when they want to access your application from the Portify app</td>
+</tr>
+<tr>
+<td>logo_url</td>
+<td>A URL to your application&#39;s logo (visible on authorization page)</td>
+</tr>
+<tr>
+<td>redirect_url</td>
+<td>Your default redirect_url when a user authorizes your application to access their data</td>
+</tr>
+</tbody></table>
 <h1 id='partner-integrations'>Partner Integrations</h1><h2 id='post-create-a-partner-integration'>[POST] Create a Partner Integration</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"ENV_URL/partners/integrations"</span>
   -X POST
   -H <span class="s2">"Authorization"</span>: <span class="s2">"Token token=SECRET"</span>
@@ -313,11 +413,11 @@
 </thead><tbody>
 <tr>
 <td>app_id</td>
-<td>Your application&#39;s unique identifier</td>
+<td>Your application&#39;s unique identifier [required]</td>
 </tr>
 <tr>
 <td>token</td>
-<td>The Oauth Token returned from the Portify sign-in page</td>
+<td>The token returned from the Portify sign-in page [required]</td>
 </tr>
 </tbody></table>
 <h1 id='selected-expenses'>Selected Expenses</h1><h2 id='get-list-selected-expenses'>[GET] List Selected Expenses</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"ENV_URL/partners/selected_expenses?access_token=ACCESS_TOKEN&amp;from_date=2018-06-01&amp;to_date=2018-10-03"</span>
@@ -330,7 +430,7 @@
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"selected_expenses"</span><span class="p">:[</span><span class="w">
+  </span><span class="s2">"selected_expenses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="s2">"7d777719-8c2a-4ada-b82e-80d1604340a7"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"made_on"</span><span class="p">:</span><span class="s2">"2018-06-06"</span><span class="p">,</span><span class="w">
@@ -378,15 +478,15 @@
 </thead><tbody>
 <tr>
 <td>access_token</td>
-<td>Your access token for the user you wish to get data for</td>
+<td>Your access token for the user you wish to get data for [required]</td>
 </tr>
 <tr>
 <td>from_date</td>
-<td>String representing the date you want to receive transactions from (YYYY-MM-DD)</td>
+<td>String representing the date you want to receive transactions from (YYYY-MM-DD) [required]</td>
 </tr>
 <tr>
 <td>to_date</td>
-<td>String representing the date you want to receive transactions until (YYYY-MM-DD)</td>
+<td>String representing the date you want to receive transactions until (YYYY-MM-DD) [required]</td>
 </tr>
 </tbody></table>
 <h1 id='selected-income'>Selected Income</h1><h2 id='get-list-selected-income'>[GET] List Selected Income</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"ENV_URL/partners/selected_expenses?access_token=ACCESS_TOKEN&amp;from_date=2018-06-01&amp;to_date=2018-10-03"</span>
@@ -399,7 +499,7 @@
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"selected_income"</span><span class="p">:[</span><span class="w">
+  </span><span class="s2">"selected_income"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="s2">"0ddb0af6-4e39-4512-ba31-2b4a3683e928"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"made_on"</span><span class="p">:</span><span class="s2">"2018-06-08"</span><span class="p">,</span><span class="w">
@@ -447,15 +547,15 @@
 </thead><tbody>
 <tr>
 <td>access_token</td>
-<td>Your access token for the user you wish to get data for</td>
+<td>Your access token for the user you wish to get data for [required]</td>
 </tr>
 <tr>
 <td>from_date</td>
-<td>String representing the date you want to receive transactions from (YYYY-MM-DD)</td>
+<td>String representing the date you want to receive transactions from (YYYY-MM-DD) [required]</td>
 </tr>
 <tr>
 <td>to_date</td>
-<td>String representing the date you want to receive transactions until (YYYY-MM-DD)</td>
+<td>String representing the date you want to receive transactions until (YYYY-MM-DD) [required]</td>
 </tr>
 </tbody></table>
 <h1 id='transactions'>Transactions</h1><h3 id='the-transaction-object'>The Transaction Object</h3>
