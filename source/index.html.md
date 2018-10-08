@@ -17,6 +17,8 @@ includes:
   - transactions/transaction
   - selected_expenses/index
   - selected_income/index
+  - users/user
+  - users/show
 
 search: true
 ---

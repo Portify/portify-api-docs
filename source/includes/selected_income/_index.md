@@ -1,7 +1,7 @@
 ## [GET] List Selected Income
 
 ```shell
-curl "ENV_URL/partners/selected_expenses?access_token=ACCESS_TOKEN&from_date=2018-06-01&to_date=2018-10-03"
+curl "ENV_URL/partners/selected_income?access_token=ACCESS_TOKEN&from_date=2018-06-01&to_date=2018-10-03"
   -X GET
   -H "Authorization": "Token token=SECRET"
   -H "Accept": "application/json"
