@@ -21,7 +21,7 @@ curl "ENV_URL/partners/applications/:APP_ID"
 }
 ```
 
-This endpoint returns a new Partner Application. SECRET token is not required to use this endpoint. 
+This endpoint returns an existing Partner Application. SECRET token is not required to use this endpoint. 
 
 ### Parameters
 
