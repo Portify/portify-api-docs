@@ -228,6 +228,9 @@
             <a href="#partner-applications" class="toc-h1 toc-link" data-title="partner-applications">Partner Applications</a>
               <ul class="toc-list-h2">
                   <li>
+                    <a href="#the-partner-application-object" class="toc-h2 toc-link" data-title="the-partner-application-object">The Partner Application Object</a>
+                  </li>
+                  <li>
                     <a href="#get-show-a-partner-application" class="toc-h2 toc-link" data-title="get-show-a-partner-application">[GET] Show a Partner Application</a>
                   </li>
                   <li>
@@ -244,26 +247,16 @@
               </ul>
           </li>
           <li>
-            <a href="#selected-expenses" class="toc-h1 toc-link" data-title="selected-expenses">Selected Expenses</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#get-list-selected-expenses" class="toc-h2 toc-link" data-title="get-list-selected-expenses">[GET] List Selected Expenses</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#selected-income" class="toc-h1 toc-link" data-title="selected-income">Selected Income</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#get-list-selected-income" class="toc-h2 toc-link" data-title="get-list-selected-income">[GET] List Selected Income</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
             <a href="#transactions" class="toc-h1 toc-link" data-title="transactions">Transactions</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#the-transaction-object" class="toc-h2 toc-link" data-title="the-transaction-object">The Transaction Object</a>
+                  </li>
+                  <li>
+                    <a href="#get-list-selected-expenses" class="toc-h2 toc-link" data-title="get-list-selected-expenses">[GET] List Selected Expenses</a>
+                  </li>
+                  <li>
+                    <a href="#get-list-selected-income" class="toc-h2 toc-link" data-title="get-list-selected-income">[GET] List Selected Income</a>
                   </li>
               </ul>
           </li>
@@ -295,7 +288,39 @@
 <p>3) The user signs in. On successful sign-in, a redirect is returned that sends the user to the Partner&#39;s desired redirect_url, with a temporary token as a query string parameter.</p>
 
 <p>4) The Partner has up to 10 minutes to use the partner_integrations#create endpoint, that will convert the token to a non-expiring Partner Integration access_token. This access_token is used in all future requests to access information belonging to the user. This access_token does not expire, but can be revoked. </p>
-<h1 id='partner-applications'>Partner Applications</h1><h2 id='get-show-a-partner-application'>[GET] Show a Partner Application</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"ENV_URL/partners/applications/:APP_ID"</span>
+<h1 id='partner-applications'>Partner Applications</h1><h2 id='the-partner-application-object'>The Partner Application Object</h2>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>The name of your application (visible on authorization page)</td>
+</tr>
+<tr>
+<td>app_id</td>
+<td>Your application&#39;s unique identifier</td>
+</tr>
+<tr>
+<td>landing_page_url</td>
+<td>Where you want Portify users to land when they want to access your application from the Portify app</td>
+</tr>
+<tr>
+<td>logo_url</td>
+<td>A URL to your application&#39;s logo (visible on authorization page)</td>
+</tr>
+<tr>
+<td>redirect_url</td>
+<td>Your default redirect_url when a user authorizes your application to access their data</td>
+</tr>
+<tr>
+<td>active</td>
+<td>Whether your application is enabled to make requests</td>
+</tr>
+</tbody></table>
+<h2 id='get-show-a-partner-application'>[GET] Show a Partner Application</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"ENV_URL/partners/applications/:APP_ID"</span>
   -X GET
   -H <span class="s2">"Accept"</span>: <span class="s2">"application/json"</span>
   -H <span class="s2">"Content-Type"</span>: <span class="s2">"application/json"</span>
@@ -392,7 +417,7 @@
   -d <span class="s1">'{
     "app_id": APP_ID,
     "token": "w3HD9bd8PpuQpXgMyjAVS5P2bu3n-FliGkCDP65dgB0"
-    }'</span>
+  }'</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -420,7 +445,51 @@
 <td>The token returned from the Portify sign-in page [required]</td>
 </tr>
 </tbody></table>
-<h1 id='selected-expenses'>Selected Expenses</h1><h2 id='get-list-selected-expenses'>[GET] List Selected Expenses</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"ENV_URL/partners/selected_expenses?access_token=ACCESS_TOKEN&amp;from_date=2018-06-01&amp;to_date=2018-10-03"</span>
+<h1 id='transactions'>Transactions</h1><h2 id='the-transaction-object'>The Transaction Object</h2>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The unique identifier used by Portify for this transaction</td>
+</tr>
+<tr>
+<td>made_on</td>
+<td>The date the transaction was made (YYYY-MM-DD)</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>The value of the transaction</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>The currency that the transaction was made in</td>
+</tr>
+<tr>
+<td>income</td>
+<td>&#39;true&#39; if the transaction was incoming to the account, &#39;false&#39; if outgoing</td>
+</tr>
+<tr>
+<td>description</td>
+<td>Information about the transaction as it appears on their bank statement. Can be overwritten by the user</td>
+</tr>
+<tr>
+<td>category</td>
+<td>The category perscribed by our banking API or chosen by the user</td>
+</tr>
+<tr>
+<td>custom</td>
+<td>Whether the transaction was pulled from banking data (true) or added manually by the user (false)</td>
+</tr>
+<tr>
+<td>selected</td>
+<td>Whether the transaction has been marked as &#39;work related&#39; by the user</td>
+</tr>
+</tbody></table>
+<h2 id='get-list-selected-expenses'>[GET] List Selected Expenses</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"ENV_URL/partners/selected_expenses?access_token=ACCESS_TOKEN&amp;from_date=2018-06-01&amp;to_date=2018-10-03"</span>
   -X GET
   -H <span class="s2">"Authorization"</span>: <span class="s2">"Token token=SECRET"</span>
   -H <span class="s2">"Accept"</span>: <span class="s2">"application/json"</span>
@@ -489,7 +558,7 @@
 <td>String representing the date you want to receive transactions until (YYYY-MM-DD) [required]</td>
 </tr>
 </tbody></table>
-<h1 id='selected-income'>Selected Income</h1><h2 id='get-list-selected-income'>[GET] List Selected Income</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"ENV_URL/partners/selected_expenses?access_token=ACCESS_TOKEN&amp;from_date=2018-06-01&amp;to_date=2018-10-03"</span>
+<h2 id='get-list-selected-income'>[GET] List Selected Income</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"ENV_URL/partners/selected_expenses?access_token=ACCESS_TOKEN&amp;from_date=2018-06-01&amp;to_date=2018-10-03"</span>
   -X GET
   -H <span class="s2">"Authorization"</span>: <span class="s2">"Token token=SECRET"</span>
   -H <span class="s2">"Accept"</span>: <span class="s2">"application/json"</span>
@@ -556,50 +625,6 @@
 <tr>
 <td>to_date</td>
 <td>String representing the date you want to receive transactions until (YYYY-MM-DD) [required]</td>
-</tr>
-</tbody></table>
-<h1 id='transactions'>Transactions</h1><h3 id='the-transaction-object'>The Transaction Object</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>id</td>
-<td>The unique identifier used by Portify for this transaction</td>
-</tr>
-<tr>
-<td>made_on</td>
-<td>The date the transaction was made (YYYY-MM-DD)</td>
-</tr>
-<tr>
-<td>amount</td>
-<td>The value of the transaction</td>
-</tr>
-<tr>
-<td>currency</td>
-<td>The currency that the transaction was made in</td>
-</tr>
-<tr>
-<td>income</td>
-<td>&#39;true&#39; if the transaction was incoming to the account, &#39;false&#39; if outgoing</td>
-</tr>
-<tr>
-<td>description</td>
-<td>Information about the transaction as it appears on their bank statement. Can be overwritten by the user</td>
-</tr>
-<tr>
-<td>category</td>
-<td>The category perscribed by our banking API or chosen by the user</td>
-</tr>
-<tr>
-<td>custom</td>
-<td>Whether the transaction was pulled from banking data (true) or added manually by the user (false)</td>
-</tr>
-<tr>
-<td>selected</td>
-<td>Whether the transaction has been deemed &#39;work related&#39; by the user</td>
 </tr>
 </tbody></table>
 
