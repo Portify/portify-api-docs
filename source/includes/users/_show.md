@@ -1,7 +1,7 @@
 ## [GET] Show a User
 
 ```shell
-curl "ENV_URL/partners/users/:APP_ID"
+curl "ENV_URL/partners/users/ACCESS_TOKEN"
   -X GET
   -H "Authorization": "Token token=SECRET"
   -H "Accept": "application/json"
