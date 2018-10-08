@@ -2,7 +2,7 @@
 
 ## The Partner Application Object
 
-Parameter | Description
+Field | Description
 --------- | -----------
 name | The name of your application (visible on authorization page)
 app_id | Your application's unique identifier

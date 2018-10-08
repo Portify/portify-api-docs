@@ -30,16 +30,4 @@ curl "ENV_URL/partners/integrations"
 }
 ```
 
-This endpoint updates a Partner Application. Not all fields are updateable, refer to the table below to learn which ones are. 
-
-### Parameters
-
-Parameter | Description
---------- | -----------
-app_id | Your application's unique identifier [required]
-name | Your application's name (visible on authorization page)
-landing_page_url | Where you want Portify users to land when they want to access your application from the Portify app
-logo_url | A URL to your application's logo (visible on authorization page)
-redirect_url | Your default redirect_url when a user authorizes your application to access their data
-
-
+This endpoint updates a Partner Application. The following fields are not updateable via API request: 'app_id', 'active'.

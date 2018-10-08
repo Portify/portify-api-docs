@@ -2,7 +2,7 @@
 
 ## The Transaction Object
 
-Parameter | Description
+Field | Description
 --------- | -----------
 id | The unique identifier used by Portify for this transaction
 made_on | The date the transaction was made (YYYY-MM-DD)

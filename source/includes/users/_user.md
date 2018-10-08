@@ -2,7 +2,7 @@
 
 ## The User Object
 
-Parameter | Description
+Field | Description
 --------- | -----------
 name | The name given by the user
 email | The email address given by the user
