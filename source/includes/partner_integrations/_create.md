@@ -29,5 +29,5 @@ This endpoint creates a new Partner Integration - between a Portify User and a P
 
 Parameter | Description
 --------- | -----------
-app_id | Your application's unique identifier
-token | The Oauth Token returned from the Portify sign-in page
+app_id | Your application's unique identifier [required]
+token | The token returned from the Portify sign-in page [required]

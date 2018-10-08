@@ -13,7 +13,7 @@ curl "ENV_URL/partners/selected_expenses?access_token=ACCESS_TOKEN&from_date=201
 
 ```json
 {
-  "selected_income":[
+  "selected_income": [
     {
       "id":"0ddb0af6-4e39-4512-ba31-2b4a3683e928",
       "made_on":"2018-06-08",
@@ -58,6 +58,6 @@ This endpoint returns an array of all <a href="#transactions">transactions</a> w
 
 Parameter | Description
 --------- | -----------
-access_token | Your access token for the user you wish to get data for
-from_date | String representing the date you want to receive transactions from (YYYY-MM-DD)
-to_date | String representing the date you want to receive transactions until (YYYY-MM-DD)
+access_token | Your access token for the user you wish to get data for [required]
+from_date | String representing the date you want to receive transactions from (YYYY-MM-DD) [required]
+to_date | String representing the date you want to receive transactions until (YYYY-MM-DD) [required]

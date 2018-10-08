@@ -10,6 +10,8 @@ toc_footers:
 includes:
   - introduction
   - authentication
+  - partner_applications/show
+  - partner_applications/update
   - partner_integrations/create
   - selected_expenses/index
   - selected_income/index
