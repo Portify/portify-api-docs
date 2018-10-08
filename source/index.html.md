@@ -11,6 +11,9 @@ includes:
   - introduction
   - authentication
   - partner_integrations/create
+  - selected_expenses/index
+  - selected_income/index
+  - transactions/transaction
 
 search: true
 ---
