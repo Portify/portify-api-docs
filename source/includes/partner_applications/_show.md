@@ -1,5 +1,3 @@
-# Partner Applications
-
 ## [GET] Show a Partner Application
 
 ```shell

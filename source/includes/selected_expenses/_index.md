@@ -1,5 +1,3 @@
-# Selected Expenses
-
 ## [GET] List Selected Expenses
 
 ```shell

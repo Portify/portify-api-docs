@@ -1,6 +1,6 @@
 # Transactions
 
-### The Transaction Object
+## The Transaction Object
 
 Parameter | Description
 --------- | -----------
@@ -12,4 +12,4 @@ income | 'true' if the transaction was incoming to the account, 'false' if outgo
 description | Information about the transaction as it appears on their bank statement. Can be overwritten by the user
 category | The category perscribed by our banking API or chosen by the user
 custom | Whether the transaction was pulled from banking data (true) or added manually by the user (false)
-selected | Whether the transaction has been deemed 'work related' by the user 
+selected | Whether the transaction has been marked as 'work related' by the user 

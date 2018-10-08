@@ -11,7 +11,7 @@ curl "ENV_URL/partners/integrations"
   -d '{
     "app_id": APP_ID,
     "token": "w3HD9bd8PpuQpXgMyjAVS5P2bu3n-FliGkCDP65dgB0"
-	}'
+  }'
 ```
 > The above command returns JSON structured like this:
 

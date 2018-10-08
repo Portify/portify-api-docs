@@ -1,5 +1,3 @@
-# Selected Income
-
 ## [GET] List Selected Income
 
 ```shell
