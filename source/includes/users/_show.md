@@ -25,4 +25,4 @@ This endpoint returns a the user associated with the given access token.
 
 Parameter | Description
 --------- | -----------
-app_id | Your application's unique identifier [required]
+access_token | The token that grants your application access to this user [required]
