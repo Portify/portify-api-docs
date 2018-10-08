@@ -1,0 +1,69 @@
+<h1 id='selected-income'>Selected Income</h1><h2 id='get-list-selected-income'>[GET] List Selected Income</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"ENV_URL/selected_expenses?access_token=ACCESS_TOKEN&amp;from_date=2018-06-01&amp;to_date=2018-10-03"</span>
+  -X GET
+  -H <span class="s2">"Authorization"</span>: <span class="s2">"Token token=SECRET"</span>
+  -H <span class="s2">"Accept"</span>: <span class="s2">"application/json"</span>
+  -H <span class="s2">"Content-Type"</span>: <span class="s2">"application/json"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"selected_income"</span><span class="p">:[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="s2">"0ddb0af6-4e39-4512-ba31-2b4a3683e928"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"made_on"</span><span class="p">:</span><span class="s2">"2018-06-08"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"amount"</span><span class="p">:</span><span class="s2">"22.50"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency"</span><span class="p">:</span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"income"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="s2">"MILROY'S OF SOHO"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"category"</span><span class="p">:</span><span class="s2">"Alcohol and Bars"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"custom"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"selected"</span><span class="p">:</span><span class="kc">true</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="s2">"239a2549-00ae-44ec-b740-ac01a0482d41"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"made_on"</span><span class="p">:</span><span class="s2">"2018-06-15"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"amount"</span><span class="p">:</span><span class="s2">"144.53"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency"</span><span class="p">:</span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"income"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="s2">"BUTCHER OAF"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"category"</span><span class="p">:</span><span class="s2">"Income (General)"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"custom"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"selected"</span><span class="p">:</span><span class="kc">true</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="s2">"e96c7a93-9081-4543-9c56-a72ed738941c"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"made_on"</span><span class="p">:</span><span class="s2">"2018-06-25"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"amount"</span><span class="p">:</span><span class="s2">"1.07"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency"</span><span class="p">:</span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"income"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="s2">"ITUNES.COM/BILL"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"category"</span><span class="p">:</span><span class="s2">"Transfer"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"custom"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"selected"</span><span class="p">:</span><span class="kc">true</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint returns an array of all <a href="#transactions">transactions</a> within the given timeframe that are marked as work-related income.</p>
+<h3 id='parameters'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>access_token</td>
+<td>Your access token for the user you wish to get data for</td>
+</tr>
+<tr>
+<td>from_date</td>
+<td>String representing the date you want to receive transactions from (YYYY-MM-DD)</td>
+</tr>
+<tr>
+<td>to_date</td>
+<td>String representing the date you want to receive transactions until (YYYY-MM-DD)</td>
+</tr>
+</tbody></table>
