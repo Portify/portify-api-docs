@@ -18,16 +18,16 @@ curl "ENV_URL/partners/integrations"
 
 ```json
 {
-  "partner_application":
-    {
-      "name":"Google",
-      "app_id":"D6wQE1hgo4dGx6FPkfRUzwu6",
-      "landing_page_url":"https://www.facebook.com",
-      "redirect_url":"https://www.google.com/callback_url",
-      "logo_url":"https://image.shutterstock.com/image-photo/valencia-spain-march-05-2017-260nw-593204357.jpg",
-      "active":true
-    }
+  "partner_application": {
+    "name":"Google",
+    "app_id":"D6wQE1hgo4dGx6FPkfRUzwu6",
+    "landing_page_url":"https://www.facebook.com",
+    "redirect_url":"https://www.google.com/callback_url",
+    "redirect_url_host":"google.com",
+    "logo_url":"https://image.shutterstock.com/image-photo/valencia-spain-march-05-2017-260nw-593204357.jpg",
+    "active":true
+  }
 }
 ```
 
-This endpoint updates a Partner Application. The following fields are not updateable via API request: 'app_id', 'active'.
+This endpoint updates a Partner Application. The following fields are not updateable via API request: 'app_id', 'active', 'redirect_url_host'.

@@ -15,6 +15,7 @@ curl "ENV_URL/partners/applications/:APP_ID"
     "app_id":"D6wQE1hgo4dGx6FPkfRUzwu6",
     "landing_page_url":"https://www.google.com",
     "redirect_url":"https://www.google.com/callback_url",
+    "redirect_url_host":"google.com",
     "logo_url":"http://assets.media-marketing.com/wp-content/uploads/2017/11/zasto-je-google-ov-logo-nesavrseno-savrsen.jpg",
     "active":true
   }
