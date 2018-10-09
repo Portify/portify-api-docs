@@ -4,7 +4,7 @@ Portify uses an Oauth2-style flow to authorize the sharing of data between user 
 
 1) User taps button in Portify app that opens the Partner's 'landing_page_url'.
 
-2) User taps a link on the Partner's landing page that takes them to https://www.portify.co/partner_applications/:APP_ID. An optional 'redirect_url' query string parameter can be passed, or the default one will be used.
+2) User taps a link on the Partner's landing page that takes them to https://www.portify.co/partner/applications/:APP_ID. An optional 'redirect_url' query string parameter can be passed, or the default one will be used.
 
 3) The user signs in. On successful sign-in, a redirect is returned that sends the user to the Partner's desired redirect_url, with a temporary token as a query string parameter.
 
