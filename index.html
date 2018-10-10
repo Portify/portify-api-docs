@@ -368,13 +368,12 @@
 <td>Your application&#39;s unique identifier [required]</td>
 </tr>
 </tbody></table>
-<h2 id='patch-update-a-partner-application'>[PATCH] Update a Partner Application</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"ENV_URL/partners/applications"</span>
+<h2 id='patch-update-a-partner-application'>[PATCH] Update a Partner Application</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"ENV_URL/partners/applications/:APP_ID"</span>
   -X PATCH
   -H <span class="s2">"Authorization"</span>: <span class="s2">"Token token=SECRET"</span>
   -H <span class="s2">"Accept"</span>: <span class="s2">"application/json"</span>
   -H <span class="s2">"Content-Type"</span>: <span class="s2">"application/json"</span>
   -d <span class="s1">'{
-    "app_id": APP_ID,
     "partner_application": {
       "landing_page":"https://www.facebook.com",
       "logo_url":"https://image.shutterstock.com/image-photo/valencia-spain-march-05-2017-260nw-593204357.jpg"
