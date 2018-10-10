@@ -396,6 +396,18 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint updates a Partner Application. The following fields are not updateable via API request: &#39;app_id&#39;, &#39;active&#39;, &#39;redirect_url_host&#39;.</p>
+<h3 id='parameters'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>app_id</td>
+<td>Your application&#39;s unique identifier [required]</td>
+</tr>
+</tbody></table>
 <h1 id='partner-integrations'>Partner Integrations</h1><h2 id='post-create-a-partner-integration'>[POST] Create a Partner Integration</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"ENV_URL/partners/integrations"</span>
   -X POST
   -H <span class="s2">"Authorization"</span>: <span class="s2">"Token token=SECRET"</span>
