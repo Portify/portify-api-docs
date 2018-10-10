@@ -1,7 +1,7 @@
 ## [PATCH] Update a Partner Application
 
 ```shell
-curl "ENV_URL/partners/integrations"
+curl "ENV_URL/partners/applications"
   -X PATCH
   -H "Authorization": "Token token=SECRET"
   -H "Accept": "application/json"
