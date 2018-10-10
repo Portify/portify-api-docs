@@ -1,13 +1,12 @@
 ## [PATCH] Update a Partner Application
 
 ```shell
-curl "ENV_URL/partners/applications"
+curl "ENV_URL/partners/applications/:APP_ID"
   -X PATCH
   -H "Authorization": "Token token=SECRET"
   -H "Accept": "application/json"
   -H "Content-Type": "application/json"
   -d '{
-    "app_id": APP_ID,
     "partner_application": {
       "landing_page":"https://www.facebook.com",
       "logo_url":"https://image.shutterstock.com/image-photo/valencia-spain-march-05-2017-260nw-593204357.jpg"
