@@ -30,3 +30,9 @@ curl "ENV_URL/partners/applications/:APP_ID"
 ```
 
 This endpoint updates a Partner Application. The following fields are not updateable via API request: 'app_id', 'active', 'redirect_url_host'.
+
+### Parameters
+
+Parameter | Description
+--------- | -----------
+app_id | Your application's unique identifier [required]
